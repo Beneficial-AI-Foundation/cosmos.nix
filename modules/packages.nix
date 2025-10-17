@@ -206,13 +206,14 @@
         ## Linux only packages
         ++ (lists.optionals pkgs.stdenv.isLinux
           [
-            # fails with: [error] [launcher] could not retrieve sbt 1.11.5
-            #{
-            #  apalache = import ../packages/apalache.nix {
-            #    inherit pkgs;
-            #    inherit (inputs) apalache-src;
-            #  };
-            #}
+            # [error] download error: Caught java.net.UnknownHostException (central.sonatype.com) while downloading https://central.sonatype.com/repository/maven-snapshots/org/lamport/tla2tools/1.7.4/tla2tools-1.7.4.pom
+            # [error] tla2tools.jar not found under https://github.com/tlaplus/tlaplus/releases/download/v1.7.4/
+            {
+              apalache = import ../packages/apalache.nix {
+                inherit pkgs;
+                inherit (inputs) apalache-src;
+              };
+            }
             # fails with gaia nill pointer, so need to have config builder for cosmos-sdk too
             # {
             #   hermes-test = import ../nixosTests/tests/hermes-test.nix {

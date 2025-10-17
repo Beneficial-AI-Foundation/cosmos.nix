@@ -2,7 +2,7 @@
   apalache-src,
   pkgs,
 }: let
-  version = "v0.44.11 ";
+  version = "v0.50.3 ";
   postPatch = ''
     # Patch the build.sbt file so that it does not call the `git describe` command.
     # This is called by sbt-derivation to resolve the Scala dependencies, however
@@ -23,7 +23,7 @@ in
     inherit version postPatch;
     pname = "apalache";
 
-    depsSha256 = "sha256-Bkw/ZV4xYPBR1bx31otb6j14ivg995MsVNEXbYha7B0=";
+    depsSha256 = "sha256-V8Mu/2sdkM17M+5cp7lWt8pIltqnBhsXFTc4rZ5wdkM=";
     src = apalache-src;
     buildPhase = "make dist";
     installPhase = ''

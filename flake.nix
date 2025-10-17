@@ -293,8 +293,8 @@
     wasmvm_1_beta7-src.flake = false;
 
     # fails with: [error] [launcher] could not retrieve sbt 1.11.5
-    #apalache-src.url = "github:informalsystems/apalache/v0.50.1";
-    #apalache-src.flake = false;
+    apalache-src.url = "github:informalsystems/apalache/v0.50.3";
+    apalache-src.flake = false;
 
     ignite-cli-src.url = "github:ignite/cli/v0.24.0";
     ignite-cli-src.flake = false;

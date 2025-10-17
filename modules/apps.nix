@@ -231,13 +231,14 @@
           ## Linux only apps
           ++ (lists.optionals pkgs.stdenv.isLinux
             [
-              # fails with: [error] [launcher] could not retrieve sbt 1.11.5
-              #{
-              #  apalache = {
-              #    type = "app";
-              #    program = "${packages.apalache}/bin/apalache-mc";
-              #  };
-              #}
+              # [error] download error: Caught java.net.UnknownHostException (central.sonatype.com) while downloading https://central.sonatype.com/repository/maven-snapshots/org/lamport/tla2tools/1.7.4/tla2tools-1.7.4.pom
+              # [error] tla2tools.jar not found under https://github.com/tlaplus/tlaplus/releases/download/v1.7.4/
+              {
+                apalache = {
+                  type = "app";
+                  program = "${packages.apalache}/bin/apalache-mc";
+                };
+              }
               {
                 stargaze = {
                   type = "app";
